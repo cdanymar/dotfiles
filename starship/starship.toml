@@ -1,0 +1,90 @@
+# ~/.config/starship.toml
+
+add_newline = true
+command_timeout = 1000
+format = "$os $username $hostname at $directory $git_branch$git_status$fill$cmd_duration\n󱞩 "
+
+[character]
+success_symbol = ''
+error_symbol = ''
+
+[os]
+format = '[$symbol](bold white)'
+disabled = false
+
+[os.symbols]
+Windows = ''
+Arch = '󰣇'
+
+[username]
+style_user = 'white bold'
+style_root = 'white bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bold yellow)'
+disabled = false
+
+[directory]
+home_symbol = '~'
+use_os_path_sep = false
+read_only = " "
+read_only_style = "bold red"
+truncation_symbol = "…/"
+format = '[$path]($style)[$read_only]($read_only_style)'
+
+[git_branch]
+always_show_remote = false
+symbol = ' '
+format = 'via [$symbol$branch(:$remote_name)]($style) '
+# truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold green'
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = '󰌺'
+ahead = '${count}'
+diverged = '⇕${ahead_count}${behind_count}'
+behind = '[${count}](red)'
+stashed = ' '
+modified = '[*](yellow) '
+staged = '[($count)](green) '
+renamed = '襁 '
+deleted = ' '
+
+[fill]
+symbol = ' '
+
+[cmd_duration]
+min_time = 0
+format = "[$duration](italic bright-black)"
+style = "bold yellow"
+disabled = false
+
+[vagrant]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[helm]
+disabled = true
+
+[python]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
